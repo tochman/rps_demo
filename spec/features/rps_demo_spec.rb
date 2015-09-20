@@ -53,12 +53,12 @@ feature 'application setup' do
     end
     
     feature 'user makes his choice' do 
-      scenario 'with rock' do 
+      scenario 'routes to /results and displays link' do 
         fill_in 'move', with: 'rock'
         click_button 'submit'
-        #binding.pry
         expect(page.current_path).to eq '/results'
         expect(page.status_code).to be 200
+        expect(page).to have_selector "a[href='/play_game']"
       end
       
       scenario 'player wins with rock over scissors' do
