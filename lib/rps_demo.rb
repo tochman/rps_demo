@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'pry'
 
 class RPSDemo < Sinatra::Base
   get '/' do
