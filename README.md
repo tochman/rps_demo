@@ -1,24 +1,28 @@
-# Rock Paper Scissord Demo
+# Sinatra Application Demo
 
-Makers Academy weekend challenge for week 3
+Steps needed to set up a basic Sinatra application together with Rack Test and Capybara.
 
-####Step-by-step
-create application folder:
+Go through those steps and remember to commit often in order to keep track of your progress in version control.
+
+####A walk through:
+Create application folder:
 ```
 mkdir my_app
 ```
-cd into that folder...
+cd into that folder and initiate a new git repository wit `git init` 
 
-
-Run: 
+In order to do set up your application run:
 ```
 rspec-sinatra init --app  MyApp lib/my_app.rb
 ```
-Run:
+I usually also run:
 ```
 rspec --init
 ``` 
-also, edit the `.rspec` file and add `--format documentation` to see a more verbose rspec output. 
+or manually create the `.rspec`-file that I edit in order to add `--format documentation` to see a more verbose rspec output. 
+
+If you have trouble running the above commands you need to install these gems from your terminal or add them to your Gemfile, run `bundle install` anr repeat those steps. 
+
 Greate a Gemfile: `touch Gemfile` and add some basic libraries (gems) you will be using: 
 ```
 source 'https://rubygems.org'
@@ -33,12 +37,17 @@ group :development, :test do
   gem 'shotgun'
 end
 ```
-add `gem ‘rack-test’ to your Gemfile and require it in your `spec_helper`, Also add `config.include Rack::Test::Methods` to your Rspec.configure block.
-create a `features` folder in `spec` 
+Also make sure to add `gem ‘rack-test’ to your Gemfile and require it in your `spec_helper`, Also add... 
+```
+config.include Rack::Test::Methods```
+...to your Rspec.configure block.
+
+Create a `features` folder in `spec` 
 ```
 mkdir spec/features
 ``` 
-create a `my_app_spec.rb` in the `features` folder. 
+Create a `my_app_spec.rb` in the `features` folder. 
+
 Add your first test:
 
 ```
