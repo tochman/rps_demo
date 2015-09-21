@@ -41,7 +41,8 @@ Also make sure to add `gem ‘rack-test’` to your Gemfile and require it in yo
 
 Also add... 
 ```
-config.include Rack::Test::Methods```
+config.include Rack::Test::Methods
+```
 ...to your `Rspec.configure` block in `spec_helper`.
 
 Create a `features` folder in `spec` 
