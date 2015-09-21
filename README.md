@@ -37,10 +37,12 @@ group :development, :test do
   gem 'shotgun'
 end
 ```
-Also make sure to add `gem ‘rack-test’ to your Gemfile and require it in your `spec_helper`, Also add... 
+Also make sure to add `gem ‘rack-test’` to your Gemfile and require it in your `spec_helper`. Don't forget to run `bundle install`.
+
+Also add... 
 ```
 config.include Rack::Test::Methods```
-...to your Rspec.configure block.
+...to your `Rspec.configure` block in `spec_helper`.
 
 Create a `features` folder in `spec` 
 ```
@@ -78,4 +80,6 @@ In order to get the assets to load, add:
 ```
 use Rack::Static, urls: ['/css', '/js', '/images', '/fonts'], root: 'assets'
 ```
-And create the folders. Also, you are gonna need a layout file in your `views`folder
+And create the folders - if you don't add any files to those folders at this stage, remember to at least create an empty `.keep` file in each folder to make git include it in version control. 
+
+Also, you are gonna need a layout file in your `views` folder, so go ahead and create that file. 
